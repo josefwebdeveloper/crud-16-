@@ -1,0 +1,19 @@
+<div class="container">
+  <mat-card>
+    <mat-card-content class="custom-mat-card" >
+      <div class="content">
+        <span class="element">{{index}}</span> <span  class="element">{{item.name}}</span>
+        <span  class="element">{{item.description}}</span>
+      </div>
+      <div class="action">
+        <button mat-icon-button color="primary" (click)="edit(item)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="delete(item)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+</div>

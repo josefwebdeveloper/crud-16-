@@ -1,0 +1,27 @@
+<div class="container">
+  <h2 class="flex-center-center title">{{data.title}}</h2>
+  <form [formGroup]="form"  (ngSubmit)="onSubmit($event)" class="form">
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input formControlName="name" matInput placeholder="Placeholder">
+      <mat-error *ngIf="form.get('name')?.touched && form.get('name')?.invalid">
+        {{ getErrorMessage(form.get('name')) }}
+      </mat-error>
+
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Description</mat-label>
+      <input formControlName="description"  matInput placeholder="Placeholder">
+      <mat-error *ngIf="form.get('description')?.touched && form.get('description')?.invalid">
+        {{ getErrorMessage(form.get('description')) }}
+      </mat-error>
+
+    </mat-form-field>
+    <div class="spacer"></div>
+    <div class="group">
+      <button  [disabled]="form.invalid || form.pending" mat-stroked-button color="primary">Save</button>
+      <button (click)="dialogRef.close()" mat-stroked-button color="warn">Cancel</button>
+    </div>
+
+  </form>
+</div>

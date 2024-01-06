@@ -1,0 +1,5 @@
+<div class="container">
+  <div *ngFor="let item of items ;let  i = index; trackBy: trackByItems" class="item-list">
+    <app-item (editItem)="editItem($event)" (deleteItem)="deleteItem($event)" [item]="item" [index]="i"></app-item>
+  </div>
+</div>

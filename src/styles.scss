@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100vh; }
+body {
+  margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: #00bcd4;
+  overflow: hidden;
+
+}
+.item-list{
+  .mat-mdc-card {
+    --mdc-elevated-card-container-shape: 49px !important;
+
+  }
+}
+.mat-toolbar-single-row {
+ height: 85px !important;
+}
+.mat-toolbar{
+  background: #3f51b5de !important;
+}
+.flex-center-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
