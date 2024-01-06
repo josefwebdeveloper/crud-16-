@@ -32,6 +32,24 @@ export class MainComponent implements OnInit, OnDestroy {
     )
 
   }
+  addNewItem() {
+    const data={
+      title: 'Add Item'
+    }
+    const dialogRef = this.dialog.open(AddEditComponent,{
+      width: '500px',
+      height: '400px',
+      data: data
+    })
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.dataService.addData(result)
+
+      }
+      console.log(result)
+
+    });
+  }
 
   trackByItems(index: number, item: any): number {
     return item.id;

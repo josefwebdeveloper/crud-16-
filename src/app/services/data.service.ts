@@ -33,6 +33,11 @@ export class DataService {
     newData[index] = data
     this.currentData$.next(newData)
   }
+  addData(data: DataModel): void {
+    const newData = this.currentData$.getValue()
+    newData.unshift(data)
+    this.currentData$.next(newData)
+  }
 
   private handleError(error: HttpErrorResponse) {
     let errorMessage: string;

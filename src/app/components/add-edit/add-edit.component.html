@@ -3,7 +3,7 @@
   <form [formGroup]="form"  (ngSubmit)="onSubmit($event)" class="form">
     <mat-form-field appearance="outline">
       <mat-label>Name</mat-label>
-      <input formControlName="name" matInput placeholder="Placeholder">
+      <input formControlName="name" matInput placeholder="Name">
       <mat-error *ngIf="form.get('name')?.touched && form.get('name')?.invalid">
         {{ getErrorMessage(form.get('name')) }}
       </mat-error>
@@ -11,7 +11,7 @@
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Description</mat-label>
-      <input formControlName="description"  matInput placeholder="Placeholder">
+      <input formControlName="description"  matInput placeholder="Description">
       <mat-error *ngIf="form.get('description')?.touched && form.get('description')?.invalid">
         {{ getErrorMessage(form.get('description')) }}
       </mat-error>

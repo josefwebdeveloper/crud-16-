@@ -15,8 +15,8 @@ import {
 })
 export class AddEditComponent implements OnInit{
   form = this.fb.group({
-    name: [this.data.name,[Validators.required, Validators.minLength(3)]],
-    description: [this.data.description,[Validators.required, Validators.minLength(3)]],
+    name: [this.data.name ? this.data.name: null,[Validators.required, Validators.minLength(3)]],
+    description: [this.data.description? this.data.description: null,[Validators.required, Validators.minLength(3)]],
   })
   constructor(
     public dialogRef: MatDialogRef<MainComponent>,
@@ -45,7 +45,7 @@ export class AddEditComponent implements OnInit{
     }
     const item={
       ...this.form.value,
-      id: this.data.id
+      id:  this.data.id ? this.data.id: Date.now()
     }
    this.dialogRef.close(item)
   }
